@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { TubelightNavbar } from '@/components/ui/tubelight-navbar';
 import {
@@ -15,6 +15,8 @@ import { Button } from "@/components/ui/button";
 import { Menu, Mountain } from "lucide-react";
 
 const Header = ({ items }) => {
+    const location = useLocation();
+
     return (
         <>
             {/* DESKTOP NAVBAR */}
@@ -37,6 +39,7 @@ const Header = ({ items }) => {
                                 <span className="sr-only">Toggle Menu</span>
                             </Button>
                         </SheetTrigger>
+
                         <SheetContent side="left">
                             <SheetHeader className="text-left mb-8">
                                 <SheetTitle>
@@ -50,22 +53,26 @@ const Header = ({ items }) => {
                                 </SheetDescription>
                             </SheetHeader>
 
-                            <div className="grid gap-4">
-                                {items.map((item) => (
-                                    <SheetClose asChild key={item.name}>
-                                        <NavLink
-                                            to={item.url}
-                                            className={({ isActive }) =>
-                                                cn(
-                                                    "block text-lg font-medium p-2 rounded-md hover:bg-muted",
-                                                    isActive ? "bg-muted text-primary" : "text-foreground/80"
-                                                )
-                                            }
-                                        >
-                                            {item.name}
-                                        </NavLink>
-                                    </SheetClose>
-                                ))}
+                            <div className="grid gap-4 font-heading">
+                                {items.map((item) => {
+                                    const isCurrent =
+                                        location.pathname === item.url ||
+                                        location.pathname.startsWith(item.url + "/"); // for nested routes too
+
+                                    return (
+                                        <SheetClose asChild key={item.name}>
+                                            <NavLink
+                                                to={item.url}
+                                                className={cn(
+                                                    "block text-lg font-medium p-2 rounded-md hover:bg-muted transition",
+                                                    isCurrent ? "bg-muted text-primary" : "text-foreground/80"
+                                                )}
+                                            >
+                                                {item.name}
+                                            </NavLink>
+                                        </SheetClose>
+                                    );
+                                })}
                             </div>
                         </SheetContent>
                     </Sheet>

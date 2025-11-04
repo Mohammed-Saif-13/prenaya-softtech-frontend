@@ -60,17 +60,17 @@
 }
 
 @keyframes infinite-marquee {
-  from {
+  0% {
     transform: translateX(0%);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }
 
 .marquee-track {
-  display: flex;
   animation: infinite-marquee 10s linear infinite;
+  display: flex;
   white-space: nowrap;
   will-change: transform;
 }

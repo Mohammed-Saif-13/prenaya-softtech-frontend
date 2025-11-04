@@ -10,7 +10,6 @@ const stats = [
     { value: 24, suffix: "/7", text: "Support Available", icon: <Headphones /> },
 ];
 
-// Animated Counter Component
 function AnimatedCounter({ from = 0, to, suffix }) {
     const nodeRef = useRef();
     const inView = useInView(nodeRef, { once: true });
@@ -38,18 +37,17 @@ function AnimatedCounter({ from = 0, to, suffix }) {
 }
 
 const StatsMarqueeSection = () => {
-    // Repeat to ensure smooth infinite look
-    const repeatedStats = [...stats, ...stats, ...stats];
+    // Repeat stats for infinite scroll feel
+    const repeatedStats = [...stats, ...stats];
 
     return (
         <section className="py-16 bg-white overflow-hidden">
-            <div className="relative flex overflow-x-hidden whitespace-nowrap">
-                {/* Items wrapper */}
-                <div className="flex animate-marquee gap-16 px-6 py-4">
-                    {repeatedStats.map((stat, index) => (
+            <div className="relative overflow-x-hidden w-full">
+                <div className="marquee-track gap-8 px-6 py-4">
+                    {[...repeatedStats].map((stat, index) => (
                         <div
                             key={index}
-                            className="flex items-center min-w-[280px] max-w-xs bg-[#f9fbfe] px-6 py-6 rounded-xl shadow-sm gap-4"
+                            className="flex items-center shrink-0 min-w-[250px] max-w-xs bg-[#f9fbfe] px-6 py-6 rounded-xl shadow-md gap-4"
                         >
                             <div className="text-primary">
                                 {React.cloneElement(stat.icon, { className: "w-10 h-10" })}
@@ -64,7 +62,7 @@ const StatsMarqueeSection = () => {
                     ))}
                 </div>
 
-                {/* Gradient fade effect */}
+                {/* optional fade side */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white pointer-events-none" />
             </div>
         </section>
