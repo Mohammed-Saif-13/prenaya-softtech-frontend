@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import GridDistortion from "@/components/ui/GridDistortion";
-import servicesBgImage from "@/assets/images/about-hero-bg.jpg";
+import servicesBgImage from "@/assets/images/building-img.jpg";
 const ServicesHeroSection = () => {
     return (
         <section className="relative h-[60vh] w-full grid place-items-center overflow-hidden">

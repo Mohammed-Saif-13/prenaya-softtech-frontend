@@ -3,12 +3,16 @@
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
 import Footer from '@/components/layout/Footer'
+import Header from '@/components/layout/Header'
+import { Toaster } from '@/components/ui/toaster'
+import { Home, Briefcase, User, Phone, LayoutGrid } from 'lucide-react'
+
+// Pages
 import HomePage from '@/pages/HomePage'
 import AboutPage from '@/pages/AboutPage'
 import ServicesPage from '@/pages/ServicesPage'
-import Header from '@/components/layout/Header'
-import { Home, Briefcase, User, Phone, LayoutGrid } from 'lucide-react'
-import { Toaster } from '@/components/ui/toaster'
+import PortfolioPage from './pages/PortfolioPage'
+import ContactPage from './pages/ContactPage' // 1. CONTACT PAGE IMPORT KIYA
 
 const navItems = [
   { name: "Home", url: "/", icon: Home },
@@ -59,6 +63,8 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="services" element={<ServicesPage />} />
+          <Route path="portfolio" element={<PortfolioPage />} />
+          <Route path="contact" element={<ContactPage />} /> {/* 2. CONTACT ROUTE ADD KIYA */}
         </Route>
       </Routes>
     </Router>

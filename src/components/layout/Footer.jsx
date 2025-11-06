@@ -1,37 +1,44 @@
-// src/components/layout/Footer.jsx
+// src/components/layout/Footer.jsx - UPDATED WITH X LOGO
 
 import React from "react"
+import { Link } from "react-router-dom"
+
+// 1. IMPORT NA_YA 'X' LOGO from react-icons
+import { SiX } from "react-icons/si";
+
+// 2. LUCIDE-REACT SE 'Twitter' HATA DIYA
 import {
     Facebook,
-    Twitter,
     Linkedin,
     Instagram,
     MapPin,
     Phone,
     Mail,
 } from "lucide-react"
-import { Link } from "react-router-dom"
 
 const Footer = () => {
     return (
         <footer className="bg-zinc-950 text-zinc-100">
             <div className="container mx-auto px-6 py-16 grid gap-y-12 gap-x-8 md:grid-cols-4">
 
-                {/* ✅ Column 1: Company Info */}
+                {/* Column 1: Company Info */}
                 <div className="text-center md:text-left flex flex-col items-center md:items-start">
                     <h2 className="text-2xl font-bold text-orange-500 mb-3">Prenaya Softtech</h2>
                     <p className="text-sm text-zinc-400 max-w-sm">
                         Innovative digital solutions provider specializing in web development, mobile apps, and digital transformation services.
                     </p>
 
-                    {/* ✅ Social Icons */}
+                    {/* Social Icons */}
                     <div className="flex gap-4 mt-4 justify-center md:justify-start">
                         <a href="#" className="bg-primary text-white p-2 rounded-full hover:bg-primary/80">
                             <Facebook size={16} />
                         </a>
+
+                        {/* 3. TWITTER ICON KO 'SiX' SE BADAL DIYA */}
                         <a href="#" className="bg-primary text-white p-2 rounded-full hover:bg-primary/80">
-                            <Twitter size={16} />
+                            <SiX size={16} />
                         </a>
+
                         <a href="#" className="bg-primary text-white p-2 rounded-full hover:bg-primary/80">
                             <Linkedin size={16} />
                         </a>
@@ -54,7 +61,6 @@ const Footer = () => {
                             <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     </div>
-
                     {/* Services */}
                     <div className="min-w-[160px]">
                         <h3 className="text-xl font-semibold text-orange-500 mb-3">Services</h3>
@@ -68,7 +74,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* ✅ Column 4: Contact Info */}
+                {/* Column 4: Contact Info */}
                 <div className="text-center md:text-left flex flex-col items-center md:items-start">
                     <h3 className="text-xl font-semibold text-orange-500 mb-3">Contact Info</h3>
                     <ul className="space-y-2 text-sm text-zinc-400">
@@ -91,7 +97,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* ✅ Bottom Copyright */}
+            {/* Bottom Copyright */}
             <div className="border-t border-zinc-800 text-center py-4 text-xs text-zinc-400">
                 © {new Date().getFullYear()} Prenaya Softtech. All rights reserved.
             </div>

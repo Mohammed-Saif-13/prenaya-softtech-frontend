@@ -6,7 +6,7 @@ import { Github, Linkedin } from 'lucide-react'
 const teamData = [
     {
         name: "Altamash Shaikh",
-        role: "Co-Founder & CEO - Technology and Business Strategy",
+        role: "Co-Founder & CEO - Technologies And Business Strategy",
         bio: "Dynamic leader with a strong foundation in technology and business strategy. BTech in Computer Science with 3+ years of experience in full-stack development, product innovation, and business growth initiatives.",
         education: "BTech in Computer Science and Engineering",
         experience: "3+ years in Technology and Business Strategy",
@@ -19,7 +19,7 @@ const teamData = [
     },
     {
         name: "Yashvardhan Shinde",
-        role: "Co-Founder & CEO - Technology and Business Strategy",
+        role: "Co-Founder & CEO - Technologies And Production",
         bio: "Dynamic leader with a strong foundation in technology and business strategy. BTech in Computer Science with 3+ years of experience in full-stack development, product innovation, and business growth initiatives.",
         education: "BTech in Computer Science and Engineering",
         experience: "3+ years in Technology and Business Strategy",
