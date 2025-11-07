@@ -1,20 +1,18 @@
 // src/pages/ContactPage.jsx
-
-import React from "react";
-import ContactHeroSection from "@/components/sections/ContactHeroSection";
-import GetInTouchSection from "@/components/sections/GetInTouchSection";
-import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
-import FaqSection from "@/components/sections/FaqSection";
+import ContactHeroSection from "@/components/sections/contact/ContactHeroSection"
+import GetInTouchSection from "@/components/sections/home/GetInTouchSection"
+import WhyChooseUsSection from "@/components/sections/about/WhyChooseUsSection"
+import FaqSection from "@/components/sections/contact/FaqSection"
 
 const ContactPage = () => {
     return (
         <>
             <ContactHeroSection />
             <GetInTouchSection />
-            <WhyChooseUsSection/>
-            <FaqSection/>
+            <WhyChooseUsSection />
+            <FaqSection />
         </>
-    );
-};
+    )
+}
 
-export default ContactPage;
+export default ContactPage

@@ -1,104 +1,122 @@
-// src/components/layout/Footer.jsx - UPDATED WITH X LOGO
-
-import React from "react"
+// src/components/layout/Footer.jsx
 import { Link } from "react-router-dom"
+import { SiX } from "react-icons/si"
+import { Linkedin, Instagram, Github, MapPin, Phone, Mail } from "lucide-react"
 
-// 1. IMPORT NA_YA 'X' LOGO from react-icons
-import { SiX } from "react-icons/si";
+// --- Data configurations for the Footer ---
 
-// 2. LUCIDE-REACT SE 'Twitter' HATA DIYA
-import {
-    Facebook,
-    Linkedin,
-    Instagram,
-    MapPin,
-    Phone,
-    Mail,
-} from "lucide-react"
+// Social media links
+const socialLinks = [
+    { href: "#", icon: Linkedin, label: "LinkedIn" },
+    { href: "#", icon: SiX, label: "X (Twitter)" },
+    { href: "#", icon: Instagram, label: "Instagram" },
+    { href: "#", icon: Github, label: "GitHub" },
+]
+
+// Navigation links
+const quickLinks = [
+    { href: "/", text: "Home" },
+    { href: "/about", text: "About" },
+    { href: "/services", text: "Services" },
+    { href: "/portfolio", text: "Portfolio" },
+    { href: "/contact", text: "Contact" },
+]
+
+// Service offerings (can be linked later if needed)
+const serviceLinks = [
+    "Web Development",
+    "Mobile App Development",
+    "E-commerce Solutions",
+    "Cloud Solutions",
+    "IoT Development",
+]
+
+// Contact details
+const contactInfo = [
+    {
+        icon: MapPin,
+        value: "Kopargaon, Maharashtra, 423603\nYeola, Maharashtra, 423401",
+        isMultiLine: true,
+    },
+    { icon: Phone, value: "7588529311 | 9359830852" },
+    { icon: Mail, value: "contact@prenayasofttech.com" },
+]
 
 const Footer = () => {
     return (
         <footer className="bg-zinc-950 text-zinc-100">
-            <div className="container mx-auto px-6 py-16 grid gap-y-12 gap-x-8 md:grid-cols-4">
+            <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 grid gap-y-10 gap-x-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 
-                {/* Column 1: Company Info */}
-                <div className="text-center md:text-left flex flex-col items-center md:items-start">
+                {/* Column 1: Company Info & Socials */}
+                <div className="flex flex-col text-center md:text-left items-center md:items-start lg:col-span-1">
                     <h2 className="text-2xl font-bold text-orange-500 mb-3">Prenaya Softtech</h2>
                     <p className="text-sm text-zinc-400 max-w-sm">
                         Innovative digital solutions provider specializing in web development, mobile apps, and digital transformation services.
                     </p>
-
-                    {/* Social Icons */}
-                    <div className="flex gap-4 mt-4 justify-center md:justify-start">
-                        <a href="#" className="bg-primary text-white p-2 rounded-full hover:bg-primary/80">
-                            <Facebook size={16} />
-                        </a>
-
-                        {/* 3. TWITTER ICON KO 'SiX' SE BADAL DIYA */}
-                        <a href="#" className="bg-primary text-white p-2 rounded-full hover:bg-primary/80">
-                            <SiX size={16} />
-                        </a>
-
-                        <a href="#" className="bg-primary text-white p-2 rounded-full hover:bg-primary/80">
-                            <Linkedin size={16} />
-                        </a>
-                        <a href="#" className="bg-primary text-white p-2 rounded-full hover:bg-primary/80">
-                            <Instagram size={16} />
-                        </a>
+                    <div className="flex gap-3 mt-5">
+                        {socialLinks.map((social) => {
+                            const SocialIcon = social.icon
+                            return (
+                                <a
+                                    key={social.label}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={social.label}
+                                    className="bg-primary text-white p-2 rounded-full hover:bg-primary/80 transition-colors"
+                                >
+                                    <SocialIcon size={16} />
+                                </a>
+                            )
+                        })}
                     </div>
                 </div>
 
-                {/* Column 2+3: Quick Links + Services */}
-                <div className="col-span-2 flex flex-row flex-wrap justify-center gap-8 sm:gap-16 text-left">
+                {/* Column 2 & 3: Links (Grouped for better responsive handling) */}
+                <div className="col-span-1 md:col-span-2 lg:col-span-2 flex justify-center sm:justify-around gap-8 sm:gap-16">
                     {/* Quick Links */}
-                    <div className="min-w-[120px]">
-                        <h3 className="text-xl font-semibold text-orange-500 mb-3">Quick Links</h3>
-                        <ul className="space-y-1 text-sm text-zinc-400">
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About</Link></li>
-                            <li><Link to="/services">Services</Link></li>
-                            <li><Link to="/portfolio">Portfolio</Link></li>
-                            <li><Link to="/contact">Contact</Link></li>
+                    <div className="min-w-[120px] text-left">
+                        <h3 className="text-lg font-semibold text-orange-500 mb-4">Quick Links</h3>
+                        <ul className="space-y-2 text-sm text-zinc-400">
+                            {quickLinks.map((link) => (
+                                <li key={link.text}>
+                                    <Link to={link.href} className="hover:text-orange-400 transition-colors">{link.text}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     {/* Services */}
-                    <div className="min-w-[160px]">
-                        <h3 className="text-xl font-semibold text-orange-500 mb-3">Services</h3>
-                        <ul className="space-y-1 text-sm text-zinc-400">
-                            <li>Web Development</li>
-                            <li>Mobile App Development</li>
-                            <li>E-commerce Solutions</li>
-                            <li>Cloud Solutions</li>
-                            <li>IoT Development</li>
+                    <div className="min-w-[160px] text-left">
+                        <h3 className="text-lg font-semibold text-orange-500 mb-4">Services</h3>
+                        <ul className="space-y-2 text-sm text-zinc-400">
+                            {serviceLinks.map((service) => (
+                                <li key={service}>{service}</li>
+                            ))}
                         </ul>
                     </div>
                 </div>
 
                 {/* Column 4: Contact Info */}
-                <div className="text-center md:text-left flex flex-col items-center md:items-start">
-                    <h3 className="text-xl font-semibold text-orange-500 mb-3">Contact Info</h3>
-                    <ul className="space-y-2 text-sm text-zinc-400">
-                        <li className="flex items-start gap-2 justify-center md:justify-start text-left">
-                            <MapPin size={16} className="mt-1 text-orange-500" />
-                            <span>
-                                Kopargaon, near Sanjivani University, Maharashtra, 423603<br />
-                                Yeola, Amardham Rd, Maharashtra, 423401
-                            </span>
-                        </li>
-                        <li className="flex items-center gap-2 justify-center md:justify-start">
-                            <Phone size={16} className="text-orange-500" />
-                            <span>7588529311 || 9359830852</span>
-                        </li>
-                        <li className="flex items-center gap-2 justify-center md:justify-start">
-                            <Mail size={16} className="text-orange-500" />
-                            <span>contact@prenayasofttech.com</span>
-                        </li>
+                <div className="lg:col-span-1 text-center md:text-left">
+                    <h3 className="text-lg font-semibold text-orange-500 mb-4">Contact Info</h3>
+                    <ul className="space-y-3 text-sm text-zinc-400">
+                        {contactInfo.map((info) => {
+                            const ContactIcon = info.icon
+                            return (
+                                <li key={info.value} className="flex items-start gap-3 justify-center md:justify-start">
+                                    <ContactIcon size={16} className="mt-1 text-orange-500 flex-shrink-0" />
+                                    <span className={`text-left ${info.isMultiLine ? 'whitespace-pre-line' : ''}`}>
+                                        {info.value}
+                                    </span>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
             </div>
 
-            {/* Bottom Copyright */}
-            <div className="border-t border-zinc-800 text-center py-4 text-xs text-zinc-400">
+            {/* Bottom Copyright Bar */}
+            <div className="border-t border-zinc-800 text-center py-4 px-4 text-xs text-zinc-400">
                 © {new Date().getFullYear()} Prenaya Softtech. All rights reserved.
             </div>
         </footer>

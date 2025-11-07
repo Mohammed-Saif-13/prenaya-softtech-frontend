@@ -1,20 +1,18 @@
 // src/pages/HomePage.jsx
-import React from 'react';
-import HeroSection from '@/components/sections/HeroSection';
-import StatsMarqueeSection from '@/components/sections/StatsMarqueeSection';
-import ServicesSection from '@/components/sections/ServicesSection';
-import GetInTouchSection from '@/components/sections/GetInTouchSection';
-
+import HeroSection from '@/components/sections/home/HeroSection'
+import StatsMarqueeSection from '@/components/sections/home/StatsMarqueeSection'
+import ServicesSection from '@/components/sections/home/ServicesSection'
+import GetInTouchSection from '@/components/sections/home/GetInTouchSection'
 
 const HomePage = () => {
     return (
-        <div>
+        <>
             <HeroSection />
             <StatsMarqueeSection />
             <ServicesSection />
-            <GetInTouchSection/>
-        </div>
-    );
-};
+            <GetInTouchSection />
+        </>
+    )
+}
 
-export default HomePage;
+export default HomePage

@@ -1,10 +1,9 @@
 // src/pages/ServicesPage.jsx
-import React from "react";
-import ServicesHeroSection from "@/components/sections/ServicesHeroSection";
-import ServicesListSection from "@/components/sections/ServicesListSection";
-import DevelopmentProcessSection from "@/components/sections/DevelopmentProcessSection";
-import TechnologiesSection from "@/components/sections/TechnologiesSection";
-import StartProjectSection from "@/components/sections/StartProjectSection";
+import ServicesHeroSection from "@/components/sections/services/ServicesHeroSection"
+import ServicesListSection from "@/components/sections/services/ServicesListSection"
+import DevelopmentProcessSection from "@/components/sections/services/DevelopmentProcessSection"
+import TechnologiesSection from "@/components/sections/services/TechnologiesSection"
+import StartProjectSection from "@/components/sections/StartProjectSection"
 
 const ServicesPage = () => {
     return (
@@ -13,9 +12,9 @@ const ServicesPage = () => {
             <ServicesListSection />
             <DevelopmentProcessSection />
             <TechnologiesSection />
-            <StartProjectSection/>
+            <StartProjectSection />
         </>
-    );
-};
+    )
+}
 
-export default ServicesPage;
+export default ServicesPage

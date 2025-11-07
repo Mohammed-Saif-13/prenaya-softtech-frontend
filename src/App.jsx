@@ -1,21 +1,19 @@
 // src/App.jsx
-
 import { useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom'
+import { Home, Briefcase, User, Phone, LayoutGrid } from 'lucide-react'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import { Toaster } from '@/components/ui/toaster'
-import { Home, Briefcase, User, Phone, LayoutGrid } from 'lucide-react'
 
-// Pages
 import HomePage from '@/pages/HomePage'
 import AboutPage from '@/pages/AboutPage'
 import ServicesPage from '@/pages/ServicesPage'
-import PortfolioPage from './pages/PortfolioPage'
-import ContactPage from './pages/ContactPage' // 1. CONTACT PAGE IMPORT KIYA
+import PortfolioPage from '@/pages/PortfolioPage'
+import ContactPage from '@/pages/ContactPage'
 
 const navItems = [
-  { name: "Home", url: "/", icon: Home },
+  { name: "Home", url: "/home", icon: Home },
   { name: "About", url: "/about", icon: User },
   { name: "Services", url: "/services", icon: Briefcase },
   { name: "Portfolio", url: "/portfolio", icon: LayoutGrid },
@@ -25,46 +23,42 @@ const navItems = [
 const AppLayout = () => (
   <div id="smooth-wrapper">
     <Header items={navItems} />
-
     <div id="smooth-content">
       <main>
         <Outlet />
       </main>
       <Footer />
     </div>
-
     <Toaster />
   </div>
 )
 
 function App() {
   useEffect(() => {
-    const gsap = window.gsap
-    const ScrollSmoother = window.ScrollSmoother
+    const { gsap, ScrollSmoother, ScrollTrigger } = window
 
-    if (gsap && ScrollSmoother) {
-      gsap.registerPlugin(window.ScrollTrigger, ScrollSmoother)
+    if (!gsap || !ScrollSmoother) return
 
-      ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
-        content: "#smooth-content",
-        smooth: 1.5,
-        effects: true
-      })
-    } else {
-      console.warn("GSAP or ScrollSmoother not available")
-    }
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+
+    ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.5,
+      effects: true
+    })
   }, [])
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<AppLayout />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<Navigate to="/home" replace />} />
+          <Route path="home" element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="services" element={<ServicesPage />} />
           <Route path="portfolio" element={<PortfolioPage />} />
-          <Route path="contact" element={<ContactPage />} /> {/* 2. CONTACT ROUTE ADD KIYA */}
+          <Route path="contact" element={<ContactPage />} />
         </Route>
       </Routes>
     </Router>

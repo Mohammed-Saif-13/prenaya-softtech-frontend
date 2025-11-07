@@ -1,4 +1,4 @@
-import React from "react"
+// src/components/sections/services/ServicesListSection.jsx
 import {
     Code2,
     Smartphone,
@@ -9,6 +9,7 @@ import {
     CheckCircle
 } from "lucide-react"
 
+// Services data configuration
 const services = [
     {
         title: "Web Development",
@@ -86,38 +87,42 @@ const services = [
 
 const ServicesListSection = () => {
     return (
-        <section className="py-20 px-6 bg-[#f6f9fc]">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {services.map((service, index) => (
-                    <div
-                        key={index}
-                        className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-start justify-between text-left hover:shadow-lg transition-all border border-gray-200"
-                    >
-                        {/* Icon */}
-                        <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-primary to-purple-500 flex items-center justify-center mb-4 shadow-lg text-white">
-                            <service.icon className="h-6 w-6" />
-                        </div>
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                {services.map((service, index) => {
+                    const Icon = service.icon
 
-                        {/* Title & Description */}
-                        <h3 className="text-xl font-semibold text-zinc-900 mb-1 font-heading">
-                            {service.title}
-                        </h3>
-                        <p className="text-sm text-zinc-600 mb-4">{service.description}</p>
+                    return (
+                        <div
+                            key={index}
+                            className="bg-white rounded-2xl shadow-md p-5 sm:p-6 flex flex-col items-start text-left hover:shadow-lg transition-shadow border border-gray-200"
+                        >
+                            {/* Icon */}
+                            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-primary to-purple-500 flex items-center justify-center mb-3 sm:mb-4 shadow-lg text-white">
+                                <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                            </div>
 
-                        {/* Features List */}
-                        <div className="mb-4">
-                            <p className="font-medium text-zinc-900 mb-2">What We Offer:</p>
-                            <ul className="space-y-1">
-                                {service.features.map((feature, fIdx) => (
-                                    <li key={fIdx} className="text-sm flex items-center text-gray-700">
-                                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 shrink-0" />
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
+                            {/* Title & Description */}
+                            <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 mb-1 sm:mb-2">
+                                {service.title}
+                            </h3>
+                            <p className="text-sm sm:text-base text-zinc-600 mb-4">{service.description}</p>
+
+                            {/* Features List */}
+                            <div className="mb-4">
+                                <p className="font-medium text-zinc-900 mb-2 text-sm sm:text-base">What We Offer:</p>
+                                <ul className="space-y-1 sm:space-y-1.5">
+                                    {service.features.map((feature, fIdx) => (
+                                        <li key={fIdx} className="text-xs sm:text-sm flex items-center text-gray-700">
+                                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 shrink-0" />
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    )
+                })}
             </div>
         </section>
     )

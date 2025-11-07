@@ -59,6 +59,8 @@
   }
 }
 
+/* ---- Infinite Marquee - SEAMLESS & CONTINUOUS ---- */
+
 @keyframes infinite-marquee {
   0% {
     transform: translateX(0%);
@@ -69,9 +71,10 @@
 }
 
 .marquee-track {
-  animation: infinite-marquee 10s linear infinite;
   display: flex;
+  min-width: max-content;
   white-space: nowrap;
+  animation: infinite-marquee 13s linear infinite;
   will-change: transform;
 }
 
