@@ -1,17 +1,17 @@
 // src/components/sections/services/TechnologiesSection.jsx
 
 const techs = [
-    { name: "PHP", icon: "/tech/php.png" },
-    { name: "Laravel", icon: "/tech/laravel.png" },
-    { name: "React", icon: "/tech/react.png" },
-    { name: "Vue.js", icon: "/tech/vue.png" },
-    { name: "Angular", icon: "/tech/angular.png" },
-    { name: "Node.js", icon: "/tech/nodejs.png" },
-    { name: "Python", icon: "/tech/python.png" },
-    { name: "Java", icon: "/tech/java.png" },
-    { name: "Flutter", icon: "/tech/flutter.png" },
-    { name: "AWS", icon: "/tech/aws.png" },
-    { name: "Docker", icon: "/tech/docker.png" },
+    { name: "PHP", icon: "/tech/php.webp" },
+    { name: "Laravel", icon: "/tech/laravel.webp" },
+    { name: "React", icon: "/tech/react.webp" },
+    { name: "Vue.js", icon: "/tech/vue.webp" },
+    { name: "Angular", icon: "/tech/angular.webp" },
+    { name: "Node.js", icon: "/tech/nodejs.webp" },
+    { name: "Python", icon: "/tech/python.webp" },
+    { name: "Java", icon: "/tech/java.webp" },
+    { name: "Flutter", icon: "/tech/flutter.webp" },
+    { name: "AWS", icon: "/tech/aws.webp" },
+    { name: "Docker", icon: "/tech/docker.webp" },
 ];
 
 const TechnologiesSection = () => {
@@ -38,6 +38,7 @@ const TechnologiesSection = () => {
                             <img
                                 src={tech.icon}
                                 alt={tech.name}
+                                loading="lazy"
                                 className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain mb-2"
                             />
                             <p className="text-xs sm:text-sm font-medium text-gray-800 text-center">

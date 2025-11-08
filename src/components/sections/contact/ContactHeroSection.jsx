@@ -1,7 +1,7 @@
 // src/components/sections/contact/ContactHeroSection.jsx
 import { motion } from "framer-motion"
 import GridDistortion from "@/components/ui/GridDistortion"
-import contactBgImage from "@/assets/images/building-img.jpg" // NOTE: Replace with a suitable background image
+import contactBgImage from "@/assets/images/building-img.webp"
 
 const ContactHeroSection = () => {
     return (

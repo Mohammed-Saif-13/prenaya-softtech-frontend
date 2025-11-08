@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import GridDistortion from '@/components/ui/GridDistortion'
-import heroBgImage from '@/assets/images/building-img.jpg'
+import heroBgImage from '@/assets/images/building-img.webp'
 
 const HeroSection = () => {
     return (

@@ -71,6 +71,7 @@ const ProjectsShowcaseSection = () => {
                                 <img
                                     src={project.image}
                                     alt={`Showcase image for ${project.name} project`}
+                                    loading="lazy"
                                     className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto"
                                 />
                             </div>

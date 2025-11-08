@@ -43,7 +43,7 @@ const services = [
 ]
 
 const contactDetails = [
-  { icon: MapPin, label: "Our Location", value: "Kopargaon, near Sanjivani University, Maharashtra, 423603" },
+  { icon: MapPin, label: "Our Location", value: "Kopargaon,423603, Maharshtra Yeola,423401, Maharashtra" },
   { icon: Phone, label: "Phone Number", value: "7588529311 | 9359830852" },
   { icon: Mail, label: "Email Address", value: "contact@prenayasofttech.com" },
   { icon: Clock, label: "Business Hours", value: "Mon-Fri: 9AM–6PM, Sat: 10AM–4PM" },

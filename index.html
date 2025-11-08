@@ -3,24 +3,39 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- === FAVICON LINKS === -->
+    <!-- Favicon Configuration for multiple devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="icon" href="/favicon.ico" />
-    <!-- ======================================== -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prenaya Softtech Solutions</title>
 
-    <!-- GSAP CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
+    <!-- SEO Meta Tags for better search engine ranking -->
+    <title>Prenaya Softtech - Innovative Digital Solutions</title>
+    <meta
+      name="description"
+      content="Prenaya Softtech specializes in custom web development, mobile apps, UI/UX design, and digital transformation services to help your business grow."
+    />
+    <meta
+      name="keywords"
+      content="web development, mobile apps, software company, prenaya softtech, digital solutions, UI/UX, e-commerce"
+    />
+    <meta name="author" content="Prenaya Softtech" />
+
+    <!-- NOTE: GSAP scripts have been moved to the end of the <body> for performance. -->
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- 
+      Third-party scripts are placed at the end of the body to prevent render-blocking.
+      This significantly improves the page load performance score.
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
   </body>
 </html>

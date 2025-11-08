@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose 
 import { Button } from "@/components/ui/button";
 import { Menu, Linkedin, Github, Instagram } from "lucide-react";
 import { SiX } from "react-icons/si";
-import fullLogo from '@/assets/logo-2.png';
+import fullLogo from '@/assets/logo-2.webp';
 
 // Social media links data configuration
 const socialLinks = [
@@ -41,6 +41,7 @@ const Header = ({ items }) => {
                         <img
                             src={fullLogo}
                             alt="Prenaya Softtech Logo"
+                            loading='lazy'
                             className="h-16 w-auto min-w-[120px] sm:h-20 sm:min-w-[140px]"
                         />
                     </NavLink>

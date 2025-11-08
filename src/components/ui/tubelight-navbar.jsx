@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import logoIcon from '@/assets/logo-1.png';
+import logoIcon from '@/assets/logo-1.webp';
 
 export function TubelightNavbar({ items, className }) {
   return (

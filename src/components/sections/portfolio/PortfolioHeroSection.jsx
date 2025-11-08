@@ -1,7 +1,7 @@
 // src/components/sections/portfolio/PortfolioHeroSection.jsx
 import { motion } from "framer-motion"
 import GridDistortion from "@/components/ui/GridDistortion"
-import portfolioBgImage from "@/assets/images/building-img.jpg"
+import portfolioBgImage from "@/assets/images/building-img.webp"
 
 const PortfolioHeroSection = () => {
     return (

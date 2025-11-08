@@ -20,7 +20,7 @@ const teamData = [
     {
         name: "Yashvardhan Shinde",
         role: "Co-Founder & CEO - Technologies And Production",
-        bio: "Dynamic leader with a strong foundation in technology and business strategy. BTech in Computer Science with 3+ years of experience in full-stack development, product innovation, and business growth initiatives.",
+        bio: "An expert in transforming technical strategy into high-quality products. A passion for steering the production pipeline, from initial code to final deployment, guarantees every project is delivered with precision and excellence.",
         education: "BTech in Computer Science and Engineering",
         experience: "3+ years in Technology and Business Strategy",
         expertise: "Full-Stack Development, Product Strategy, Technology Innovation, Business Growth",

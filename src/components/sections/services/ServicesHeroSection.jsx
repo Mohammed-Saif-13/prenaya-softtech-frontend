@@ -1,7 +1,7 @@
 // src/components/sections/services/ServicesHeroSection.jsx
 import { motion } from "framer-motion"
 import GridDistortion from "@/components/ui/GridDistortion"
-import servicesBgImage from "@/assets/images/building-img.jpg"
+import servicesBgImage from "@/assets/images/building-img.webp"
 
 const ServicesHeroSection = () => {
     return (
