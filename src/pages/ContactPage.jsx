@@ -8,7 +8,12 @@ const ContactPage = () => {
     return (
         <>
             <ContactHeroSection />
-            <GetInTouchSection />
+
+            {/* Scroll anchor for the contact form */}
+            <div id="contact-form">
+                <GetInTouchSection />
+            </div>
+
             <WhyChooseUsSection />
             <FaqSection />
         </>

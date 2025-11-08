@@ -19,13 +19,16 @@ const StartProjectSection = () => {
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 font-heading">
-                    <Link to="/contact" className="w-full sm:w-auto">
+                <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
+
+                    {/* Updated link for "Get Free Consultation" button */}
+                    <Link to="/contact#contact-form" className="w-full sm:w-auto">
                         <Button size="lg" className="w-full group">
                             Get Free Consultation
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Button>
                     </Link>
+
                     <Link to="/portfolio" className="w-full sm:w-auto">
                         <Button size="lg" variant="outline" className="w-full">
                             View Our Work

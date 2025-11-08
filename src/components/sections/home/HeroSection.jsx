@@ -1,6 +1,6 @@
 // src/components/sections/home/HeroSection.jsx
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom' // 1. Link import kiya
+import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import GridDistortion from '@/components/ui/GridDistortion'
 import heroBgImage from '@/assets/images/building-img.jpg'
@@ -36,11 +36,11 @@ const HeroSection = () => {
                     We create cutting-edge web applications, mobile apps, and digital solutions that drive business growth and enhance user experiences.
                 </p>
 
-                {/* --- YAHAN CHANGE KIYA HAI --- */}
+                {/* Call-to-action Buttons */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-2 sm:mt-4 w-full sm:w-auto px-4 sm:px-0 font-heading">
 
-                    {/* Get Started Button */}
-                    <Link to="/contact" className="w-full sm:w-auto">
+                    {/* Get Started Button - Updated link with anchor */}
+                    <Link to="/contact#contact-form" className="w-full sm:w-auto">
                         <Button size="lg" className="w-full sm:w-auto min-w-[160px]">
                             Get Started
                         </Button>
@@ -53,8 +53,6 @@ const HeroSection = () => {
                         </Button>
                     </Link>
                 </div>
-                {/* ----------------------------- */}
-
             </motion.div>
         </section>
     )
