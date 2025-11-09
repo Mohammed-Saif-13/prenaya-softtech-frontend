@@ -64,7 +64,9 @@ const TestimonialsSection = () => {
                 <Swiper
                     effect="cards"
                     grabCursor={true}
-                    loop={true} // Tera loop false tha, true behtar rehta hai
+                    // --- YAHAN FIX KIYA HAI BRO ---
+                    // loop ko false karne se warning chali jaayegi
+                    loop={false}
                     className="testimonial-swiper-card w-[270px] h-[340px] sm:w-[320px] sm:h-[340px]"
                     modules={[EffectCards]}
                     cardsEffect={{

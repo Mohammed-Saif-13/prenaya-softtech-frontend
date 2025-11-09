@@ -28,7 +28,7 @@ const Header = ({ items }) => {
     return (
         <>
             {/* Desktop Navbar: Renders on medium screens and up */}
-            <div className="hidden md:block font-heading"> {/* font-heading added back here */}
+            <div className="hidden md:block font-heading">
                 <TubelightNavbar items={items} />
             </div>
 
@@ -41,7 +41,9 @@ const Header = ({ items }) => {
                         <img
                             src={fullLogo}
                             alt="Prenaya Softtech Logo"
-                            loading='lazy'
+                            // --- YAHAN FIX KIYA HAI BRO ---
+                            // Logo 'above the fold' hai, isliye 'eager' aacha hai.
+                            loading='eager'
                             className="h-16 w-auto min-w-[120px] sm:h-20 sm:min-w-[140px]"
                         />
                     </NavLink>
@@ -73,7 +75,6 @@ const Header = ({ items }) => {
                             {/* Mapped navigation links */}
                             <div className="grid gap-4 font-heading">
                                 {items.map((item) => {
-                                    // Manually determine if the link is active.
                                     const isCurrent =
                                         location.pathname === item.url ||
                                         (item.url !== "/" && location.pathname.startsWith(item.url + "/"));
